@@ -45,7 +45,7 @@ const features = [
 
 export const Features = () => {
   return (
-    <section id="features" className="py-20 md:py-24 relative bg-[#060318]">
+    <section id="features" className="py-16 md:py-20 relative bg-[#0b0a15] border-t border-white/[0.02]">
       <Container>
         <div className="text-center max-w-2xl mx-auto mb-16">
           <AnimateIn variant="fadeUp">

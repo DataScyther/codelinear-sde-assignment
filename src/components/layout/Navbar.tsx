@@ -22,16 +22,16 @@ export const Navbar = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent",
         isScrolled
-          ? "bg-[#030014]/75 backdrop-blur-md border-white/[0.03] py-3.5 shadow-[0_4px_30px_rgba(0,0,0,0.3)]"
-          : "bg-transparent py-5"
+          ? "bg-[#07060f]/80 backdrop-blur-md border-white/[0.02] py-3 shadow-[0_4px_20px_rgba(0,0,0,0.2)]"
+          : "bg-transparent py-[18px]"
       )}
     >
       <Container className="flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <div className="relative flex items-center justify-center w-7 h-7 rounded-lg bg-gradient-to-br from-[#a855f7] to-[#06b6d4] p-[1px]">
-            <div className="flex items-center justify-center w-full h-full bg-[#030014] rounded-[6px]">
-              <Hexagon className="w-4 h-4 text-[#06b6d4]" />
+            <div className="flex items-center justify-center w-full h-full bg-[#07060f] rounded-[6px]">
+              <Hexagon className="w-4 h-4 text-cyber-cyan" />
             </div>
           </div>
           <span className="font-heading font-bold text-base tracking-tight text-slate-100">
@@ -78,7 +78,7 @@ export const Navbar = () => {
 
       {/* Mobile menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-[#030014]/95 backdrop-blur-xl border-b border-white/[0.04] py-3 px-4 flex flex-col gap-0.5">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-[#07060f]/95 backdrop-blur-xl border-b border-white/[0.02] py-3 px-4 flex flex-col gap-0.5">
           {headerNavItems.map((item) => (
             <Link
               key={item.title}
@@ -89,7 +89,7 @@ export const Navbar = () => {
               {item.title}
             </Link>
           ))}
-          <div className="pt-2 mt-1 border-t border-white/[0.04]">
+          <div className="pt-2 mt-1 border-t border-white/[0.02]">
             <Link
               href="#features"
               className="flex items-center justify-center w-full px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#a855f7] to-[#06b6d4] text-white text-sm font-medium"

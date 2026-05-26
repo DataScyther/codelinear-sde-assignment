@@ -10,10 +10,10 @@
   --font-body: var(--font-inter), system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), monospace;
 
-  /* Color System - Dark Futuristic Palette */
-  --color-bg-space: #030014;
-  --color-bg-card: #0b0720;
-  --color-bg-card-hover: #120c30;
+  /* Color System - Graphite Slate Dark Palette */
+  --color-bg-space: #07060f;
+  --color-bg-card: #0d0c18;
+  --color-bg-card-hover: #131225;
   
   --color-cyber-cyan: #06b6d4;
   --color-cyber-cyan-hover: #0891b2;
@@ -22,7 +22,7 @@
   --color-cyber-blue: #3b82f6;
   --color-cyber-pink: #ec4899;
   
-  --color-border-subtle: #1f1a3a;
+  --color-border-subtle: #161524;
   --color-border-glow: #3c2a74;
   --color-border-glass: rgba(255, 255, 255, 0.08);
   

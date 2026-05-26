@@ -10,7 +10,7 @@
   --font-body: var(--font-inter), system-ui, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  /* Color System - Graphite Slate Dark Palette */
+  /* Color System */
   --color-bg-space: #07060f;
   --color-bg-card: #0d0c18;
   --color-bg-card-hover: #131225;
@@ -50,18 +50,17 @@
   --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Custom Spacing Rules & Container Widths */
+/* Layout */
 :root {
   --content-max-width: 1280px;
   --header-height: 80px;
 }
 
-/* Prevent horizontal overflow */
 html {
   overflow-x: hidden;
 }
 
-/* Scrollbar customization */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;

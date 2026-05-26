@@ -1,9 +1,8 @@
 @import "tailwindcss";
 @import "../styles/theme.css";
 
-/* Base typography integrations */
+/* Base typography */
 :root {
-  /* Set fallback CSS variables that align with next/font/google config */
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
@@ -25,32 +24,28 @@ body {
   background-clip: text;
 }
 
-/* Interactive elements base overrides */
+/*
+ * Narrowed transition scope for interactive elements.
+ * "transition-all" forces the browser to track every CSS property —
+ * limit to the properties that actually change on interaction.
+ */
 a, button {
-  transition: all 0.2s ease-in-out;
+  transition-property: color, background-color, border-color, opacity, transform, box-shadow;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-out;
 }
 
-/* Prevent layout shift during page loads */
+/*
+ * Do NOT use scroll-behavior: smooth on <html>.
+ * It replaces the OS-native scroll interpolator with a CSS-driven one
+ * that caps at ~60fps and kills momentum physics on 120Hz displays.
+ * Anchor-link smooth scrolling is handled via JS (scrollIntoView) if needed.
+ */
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: var(--header-height);
 }
 
-/* Typography refinements */
+/* Typography */
 h1, h2, h3, h4 {
   letter-spacing: -0.02em;
 }
-
-/* GPU layer promotion for smooth transitions */
-.gpu-layer {
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-/* Off-screen rendering containment */
-.section-contain {
-  content-visibility: auto;
-  contain-intrinsic-size: 1px 500px;
-}
-

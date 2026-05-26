@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { headerNavItems } from "@/constants/navigation";
 import { cn } from "@/lib/utils";
@@ -11,18 +11,40 @@ export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const handleScroll = useCallback(() => {
+    setIsScrolled(window.scrollY > 10);
+  }, []);
+
+  const closeMobileMenu = useCallback(() => {
+    setIsMobileMenuOpen(false);
+  }, []);
+
+  const toggleMobileMenu = useCallback(() => {
+    setIsMobileMenuOpen((prev) => !prev);
+  }, []);
+
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [handleScroll]);
 
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent py-3.5",
+        /*
+         * Performance-critical: this element is fixed and rendered on every scroll frame.
+         *
+         * Key decisions:
+         * - NO backdrop-blur — this is the single most expensive effect on a fixed element.
+         *   On every scroll frame the GPU must re-sample and blur the pixels behind the header.
+         *   Using a near-opaque solid background instead is visually identical on dark themes.
+         * - transition scoped to background-color, border-color, box-shadow only.
+         *   "transition-all" on a fixed element causes layout recalc per frame.
+         */
+        "fixed top-0 left-0 right-0 z-50 py-3.5 border-b border-transparent",
+        "transition-[background-color,border-color,box-shadow] duration-200 ease-out",
         isScrolled
-          ? "bg-[#07060f]/80 backdrop-blur-md border-white/[0.02] shadow-[0_4px_20px_rgba(0,0,0,0.2)]"
+          ? "bg-[#07060f]/95 border-white/[0.03] shadow-[0_1px_0_rgba(255,255,255,0.02)]"
           : "bg-transparent"
       )}
     >
@@ -39,13 +61,13 @@ export const Navbar = () => {
           </span>
         </Link>
 
-        {/* Desktop nav — centered */}
+        {/* Desktop nav */}
         <nav aria-label="Main navigation" className="hidden md:flex items-center gap-8">
           {headerNavItems.map((item) => (
             <Link
               key={item.title}
               href={item.href}
-              className="text-[13px] text-slate-400 hover:text-slate-200 transition-colors"
+              className="text-[13px] text-slate-400 hover:text-slate-200 transition-colors duration-150"
             >
               {item.title}
             </Link>
@@ -56,7 +78,7 @@ export const Navbar = () => {
         <div className="hidden md:flex items-center">
           <Link
             href="#features"
-            className="px-4 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.08] border border-white/[0.08] text-[13px] font-medium text-white transition-all"
+            className="px-4 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.08] border border-white/[0.08] text-[13px] font-medium text-white transition-[background-color,border-color] duration-150"
           >
             Get Started
           </Link>
@@ -64,8 +86,8 @@ export const Navbar = () => {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden p-2 text-slate-300 hover:text-white transition-colors"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="md:hidden p-2 text-slate-300 hover:text-white transition-colors duration-150"
+          onClick={toggleMobileMenu}
           aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? (
@@ -76,15 +98,15 @@ export const Navbar = () => {
         </button>
       </Container>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — no backdrop-blur for perf */}
       {isMobileMenuOpen && (
-        <nav aria-label="Mobile navigation" className="md:hidden absolute top-full left-0 right-0 bg-[#07060f]/95 backdrop-blur-xl border-b border-white/[0.02] py-3 px-4 flex flex-col gap-0.5">
+        <nav aria-label="Mobile navigation" className="md:hidden absolute top-full left-0 right-0 bg-[#07060f]/98 border-b border-white/[0.02] py-3 px-4 flex flex-col gap-0.5">
           {headerNavItems.map((item) => (
             <Link
               key={item.title}
               href={item.href}
-              className="text-sm text-slate-300 hover:text-white p-3 rounded-lg hover:bg-white/[0.04] transition-colors"
-              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-sm text-slate-300 hover:text-white p-3 rounded-lg hover:bg-white/[0.04] transition-colors duration-150"
+              onClick={closeMobileMenu}
             >
               {item.title}
             </Link>
@@ -93,7 +115,7 @@ export const Navbar = () => {
             <Link
               href="#features"
               className="flex items-center justify-center w-full px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#a855f7] to-[#06b6d4] text-white text-sm font-medium"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={closeMobileMenu}
             >
               Get Started
             </Link>

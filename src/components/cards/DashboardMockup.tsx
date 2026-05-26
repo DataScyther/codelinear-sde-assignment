@@ -1,15 +1,38 @@
-import React from "react";
+import React, { memo } from "react";
 import { Activity, ArrowUpRight, DollarSign, TrendingUp } from "lucide-react";
 
-// Intentionally irregular bar heights to mimic real trading volume data.
-// Pattern: gradual uptrend with natural dips — not mathematically smooth.
 const chartBars = [
   28, 34, 22, 45, 38, 52, 41, 63, 55, 48,
   70, 58, 75, 62, 80, 68, 85, 72, 90, 78,
   88, 82, 95, 87,
 ];
 
-export const DashboardMockup = () => {
+const widgets = [
+  {
+    icon: Activity,
+    color: "#a855f7",
+    label: "Network Status",
+    value: "Operational",
+  },
+  {
+    icon: DollarSign,
+    color: "#06b6d4",
+    label: "24h Volume",
+    value: "$4.2B",
+  },
+  {
+    icon: TrendingUp,
+    color: "#3b82f6",
+    label: "Active Pools",
+    value: "1,247",
+  },
+];
+
+/**
+ * Memoized dashboard mockup — this is a purely visual/static component.
+ * No state, no side effects, no reason to ever re-render.
+ */
+export const DashboardMockup = memo(function DashboardMockup() {
   return (
     <div className="w-full rounded-2xl bg-bg-card/90 border border-white/[0.05] shadow-[0_8px_32px_rgba(0,0,0,0.3)] overflow-hidden">
       {/* Window chrome */}
@@ -72,7 +95,7 @@ export const DashboardMockup = () => {
                   {chartBars.map((h, i) => (
                     <div
                       key={i}
-                      className="flex-1 bg-cyber-cyan/[0.15] hover:bg-cyber-cyan/35 rounded-t-[1px] transition-colors duration-200"
+                      className="flex-1 bg-cyber-cyan/[0.15] hover:bg-cyber-cyan/35 rounded-t-[1px] transition-colors duration-150"
                       style={{ height: `${h}%` }}
                     />
                   ))}
@@ -90,31 +113,12 @@ export const DashboardMockup = () => {
           </div>
         </div>
 
-        {/* Side widgets - distributed evenly to balance the left column height on desktop */}
+        {/* Side widgets */}
         <div className="flex flex-col justify-between gap-3 md:gap-0 md:h-full">
-          {[
-            {
-              icon: Activity,
-              color: "#a855f7",
-              label: "Network Status",
-              value: "Operational",
-            },
-            {
-              icon: DollarSign,
-              color: "#06b6d4",
-              label: "24h Volume",
-              value: "$4.2B",
-            },
-            {
-              icon: TrendingUp,
-              color: "#3b82f6",
-              label: "Active Pools",
-              value: "1,247",
-            },
-          ].map((widget) => (
+          {widgets.map((widget) => (
             <div
               key={widget.label}
-              className="p-3.5 rounded-xl bg-white/[0.01] border border-white/[0.04] hover:bg-white/[0.02] hover:border-white/[0.08] transition-all duration-350 ease-[var(--ease-premium)] flex items-center gap-3 will-change-transform gpu-layer"
+              className="p-3.5 rounded-xl bg-white/[0.01] border border-white/[0.04] hover:bg-white/[0.02] hover:border-white/[0.08] transition-[background-color,border-color] duration-200 flex items-center gap-3"
             >
               <div
                 className="p-1.5 rounded-md"
@@ -139,4 +143,4 @@ export const DashboardMockup = () => {
       </div>
     </div>
   );
-};
+});

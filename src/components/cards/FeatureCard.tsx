@@ -18,21 +18,18 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
   return (
     <div
       className={cn(
-        "group relative p-6 md:p-8 rounded-3xl bg-[#0b0720] border border-white/5 transition-all duration-300 hover:shadow-[var(--shadow-glow-purple)] hover:border-[#a855f7]/30 hover:-translate-y-1 overflow-hidden",
+        "group relative p-6 md:p-7 rounded-2xl bg-[#0b0720] border border-white/[0.06] transition-all duration-300 hover:border-white/[0.12] hover:-translate-y-0.5 overflow-hidden",
         className
       )}
     >
-      {/* Subtle Background Mesh/Glow inside the card */}
-      <div className="absolute top-0 left-0 w-full h-[60%] bg-gradient-to-b from-[#a855f7]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-t-3xl pointer-events-none" />
-      
       <div className="relative z-10">
-        <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-white/5 border border-white/10 mb-6 text-[#06b6d4] group-hover:text-[#a855f7] group-hover:scale-110 transition-all duration-300 shadow-[var(--shadow-glass)]">
-          <Icon className="w-6 h-6" />
+        <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white/[0.06] border border-white/[0.08] mb-5 text-[#06b6d4] group-hover:text-[#a855f7] transition-colors duration-300">
+          <Icon className="w-5 h-5" />
         </div>
-        <h3 className="text-xl font-heading font-semibold text-slate-100 mb-3 group-hover:text-white transition-colors">
+        <h3 className="text-lg font-heading font-semibold text-white mb-2">
           {title}
         </h3>
-        <p className="text-slate-400 leading-relaxed text-sm">
+        <p className="text-slate-500 leading-relaxed text-sm">
           {description}
         </p>
       </div>

@@ -6,91 +6,62 @@ import { footerNavItems } from "@/constants/navigation";
 
 export const Footer = () => {
   return (
-    <footer className="border-t border-white/5 bg-[#030014] pt-20 pb-10">
+    <footer className="border-t border-white/[0.04] bg-[#030014] pt-16 pb-8">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-6 mb-12">
           {/* Brand */}
-          <div className="lg:col-span-2 flex flex-col">
-            <Link
-              href="/"
-              className="flex items-center gap-2 group mb-6 w-fit"
-            >
-              <div className="relative flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-br from-[#a855f7] to-[#06b6d4] p-[1px]">
-                <div className="flex items-center justify-center w-full h-full bg-[#030014] rounded-lg">
-                  <Hexagon className="w-5 h-5 text-[#06b6d4]" />
+          <div className="col-span-2 md:col-span-4 lg:col-span-2">
+            <Link href="/" className="flex items-center gap-2 mb-4 w-fit">
+              <div className="relative flex items-center justify-center w-7 h-7 rounded-lg bg-gradient-to-br from-[#a855f7] to-[#06b6d4] p-[1px]">
+                <div className="flex items-center justify-center w-full h-full bg-[#030014] rounded-[6px]">
+                  <Hexagon className="w-4 h-4 text-[#06b6d4]" />
                 </div>
               </div>
-              <span className="font-heading font-bold text-xl tracking-tight text-slate-100">
+              <span className="font-heading font-bold text-lg tracking-tight text-slate-100">
                 Codelinear
               </span>
             </Link>
-            <p className="text-slate-400 text-sm max-w-xs leading-relaxed mb-6">
+            <p className="text-slate-500 text-sm max-w-xs leading-relaxed">
               Modern financial infrastructure for high-performance institutions.
             </p>
           </div>
 
-          {/* Product */}
-          <div className="flex flex-col gap-6">
-            <h4 className="text-white font-semibold">Product</h4>
-            <ul className="flex flex-col gap-4">
-              {footerNavItems.product.map((item) => (
-                <li key={item.title}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-slate-400 hover:text-[#06b6d4] transition-colors"
-                  >
-                    {item.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div className="flex flex-col gap-6">
-            <h4 className="text-white font-semibold">Resources</h4>
-            <ul className="flex flex-col gap-4">
-              {footerNavItems.resources.map((item) => (
-                <li key={item.title}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-slate-400 hover:text-[#06b6d4] transition-colors"
-                  >
-                    {item.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div className="flex flex-col gap-6">
-            <h4 className="text-white font-semibold">Company</h4>
-            <ul className="flex flex-col gap-4">
-              {footerNavItems.company.map((item) => (
-                <li key={item.title}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-slate-400 hover:text-[#06b6d4] transition-colors"
-                  >
-                    {item.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Link columns */}
+          {[
+            { title: "Product", items: footerNavItems.product },
+            { title: "Resources", items: footerNavItems.resources },
+            { title: "Company", items: footerNavItems.company },
+          ].map((column) => (
+            <div key={column.title}>
+              <h4 className="text-sm font-medium text-white mb-4">
+                {column.title}
+              </h4>
+              <ul className="flex flex-col gap-3">
+                {column.items.map((item) => (
+                  <li key={item.title}>
+                    <Link
+                      href={item.href}
+                      className="text-sm text-slate-500 hover:text-slate-300 transition-colors"
+                    >
+                      {item.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-slate-500">
+        <div className="pt-6 border-t border-white/[0.04] flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-xs text-slate-600">
             © {new Date().getFullYear()} Codelinear. All rights reserved.
           </p>
-          <div className="flex items-center gap-6 flex-wrap">
+          <div className="flex items-center gap-5">
             {footerNavItems.legal.map((item) => (
               <Link
                 key={item.title}
                 href={item.href}
-                className="text-sm text-slate-500 hover:text-white transition-colors"
+                className="text-xs text-slate-600 hover:text-slate-400 transition-colors"
               >
                 {item.title}
               </Link>

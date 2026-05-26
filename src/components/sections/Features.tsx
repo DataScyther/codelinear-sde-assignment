@@ -9,65 +9,67 @@ const features = [
     icon: Zap,
     title: "Ultra-Low Latency",
     description:
-      "Execute transactions in microseconds with our proprietary routing engine, ensuring you never miss a market movement.",
+      "Execute transactions in microseconds with our proprietary routing engine.",
   },
   {
     icon: Shield,
     title: "Bank-Grade Security",
     description:
-      "Military-grade encryption and decentralized key management keep your digital assets and user data absolutely secure.",
+      "End-to-end encryption and decentralized key management for all digital assets.",
   },
   {
     icon: Layers,
     title: "Modular Architecture",
     description:
-      "Plug-and-play microservices allow you to build customized financial products faster than ever before.",
+      "Plug-and-play microservices to build customized financial products faster.",
   },
   {
     icon: Globe,
     title: "Global Liquidity",
     description:
-      "Access unified liquidity pools across 50+ decentralized and centralized exchanges through a single unified API.",
+      "Unified liquidity pools across 50+ exchanges through a single API.",
   },
   {
     icon: Cpu,
-    title: "AI-Powered Risk Engine",
+    title: "Smart Risk Engine",
     description:
-      "Real-time fraud detection and risk assessment powered by cutting-edge neural networks.",
+      "Real-time fraud detection and risk assessment powered by ML models.",
   },
   {
     icon: Lock,
     title: "Compliance Ready",
     description:
-      "Built-in KYC/AML workflows and automated reporting ensure you stay compliant in every jurisdiction.",
+      "Built-in KYC/AML workflows and automated reporting across jurisdictions.",
   },
 ];
 
 export const Features = () => {
   return (
-    <section id="features" className="py-24 relative z-20">
+    <section id="features" className="py-28 relative">
       <Container>
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <AnimateIn type="slide-up">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6 tracking-tight">
-              Engineering the Future of <br className="hidden md:block" />
-              <span className="text-gradient-purple-cyan">Financial Technology</span>
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <AnimateIn variant="fadeUp">
+            <h2 className="text-2xl md:text-4xl font-heading font-bold text-white mb-4 tracking-tight">
+              Built for{" "}
+              <span className="text-gradient-purple-cyan">
+                Modern Finance
+              </span>
             </h2>
           </AnimateIn>
-          <AnimateIn type="slide-up" delay={0.1}>
-            <p className="text-slate-400 text-lg">
-              Our infrastructure provides the foundational primitives you need to launch
-              scalable, secure, and blazing-fast financial applications.
+          <AnimateIn variant="fadeUp" delay={0.1}>
+            <p className="text-slate-500 text-base">
+              Everything you need to launch scalable, secure financial
+              applications.
             </p>
           </AnimateIn>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {features.map((feature, index) => (
             <AnimateIn
               key={feature.title}
-              type="slide-up"
-              delay={0.1 * (index % 3) + 0.2}
+              variant="fadeUp"
+              delay={0.05 * (index % 3) + 0.15}
             >
               <FeatureCard
                 icon={feature.icon}

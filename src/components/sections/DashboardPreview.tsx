@@ -5,27 +5,27 @@ import { DashboardMockup } from "@/components/cards/DashboardMockup";
 
 export const DashboardPreview = () => {
   return (
-    <section className="py-24 relative overflow-hidden bg-[#030014]">
-      {/* Subtle Glow Behind Dashboard */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-[#a855f7]/20 to-[#06b6d4]/20 blur-[120px] rounded-full pointer-events-none" />
+    <section id="dashboard" className="py-28 relative overflow-hidden">
+      {/* Subtle background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-r from-[#a855f7]/10 to-[#06b6d4]/10 blur-[120px] rounded-full pointer-events-none" />
 
       <Container className="relative z-10 flex flex-col items-center">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <AnimateIn type="slide-up">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
-              Command Your Financial Empire
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <AnimateIn variant="fadeUp">
+            <h2 className="text-2xl md:text-4xl font-heading font-bold text-white mb-4 tracking-tight">
+              Your Command Center
             </h2>
           </AnimateIn>
-          <AnimateIn type="slide-up" delay={0.1}>
-            <p className="text-slate-400 text-lg">
-              Monitor real-time analytics, manage high-frequency trades, and view consolidated liquidity across all your connected networks in one unified interface.
+          <AnimateIn variant="fadeUp" delay={0.1}>
+            <p className="text-slate-500 text-base">
+              Monitor analytics, manage trades, and view consolidated liquidity
+              in one interface.
             </p>
           </AnimateIn>
         </div>
 
-        <AnimateIn type="slide-up" delay={0.2} className="w-full max-w-5xl">
-          {/* Container simulating a subtle 3D tilt perspective */}
-          <div className="p-2 md:p-4 rounded-3xl bg-white/5 border border-white/10 shadow-[0_0_50px_-12px_rgba(6,182,212,0.3)]">
+        <AnimateIn variant="fadeUp" delay={0.15} className="w-full max-w-4xl">
+          <div className="p-1.5 md:p-2 rounded-2xl bg-white/[0.03] border border-white/[0.08]">
             <DashboardMockup />
           </div>
         </AnimateIn>

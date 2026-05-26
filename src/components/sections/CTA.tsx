@@ -6,10 +6,10 @@ import { AnimateIn } from "@/components/animations/AnimateIn";
 
 export const CTA = () => {
   return (
-    <section className="py-28">
+    <section className="py-20 md:py-24 bg-[#030014]">
       <Container>
         <AnimateIn variant="scaleIn" className="max-w-3xl mx-auto">
-          <div className="p-8 md:p-14 text-center relative overflow-hidden rounded-2xl bg-[#0a0520]/70 backdrop-blur-xl border border-white/[0.08]">
+          <div className="p-6 sm:p-10 md:p-14 text-center relative overflow-hidden rounded-2xl bg-[#0a0520]/70 backdrop-blur-xl border border-white/[0.08]">
             {/* Subtle glow */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[60%] bg-gradient-to-b from-[#a855f7]/15 to-transparent pointer-events-none rounded-full blur-2xl" />
 

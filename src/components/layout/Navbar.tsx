@@ -22,8 +22,8 @@ export const Navbar = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent",
         isScrolled
-          ? "bg-[#030014]/80 backdrop-blur-md border-white/[0.04] py-3"
-          : "bg-transparent py-4"
+          ? "bg-[#030014]/75 backdrop-blur-md border-white/[0.03] py-3.5 shadow-[0_4px_30px_rgba(0,0,0,0.3)]"
+          : "bg-transparent py-5"
       )}
     >
       <Container className="flex items-center justify-between">
@@ -40,7 +40,7 @@ export const Navbar = () => {
         </Link>
 
         {/* Desktop nav — centered */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-8">
           {headerNavItems.map((item) => (
             <Link
               key={item.title}

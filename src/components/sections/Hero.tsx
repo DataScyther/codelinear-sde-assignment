@@ -6,7 +6,7 @@ import { AnimateIn } from "@/components/animations/AnimateIn";
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-[70vh] flex items-center pt-24 pb-16 overflow-hidden">
+    <section className="relative min-h-[70vh] flex items-center pt-28 md:pt-32 pb-16 md:pb-20 overflow-hidden">
       {/* Background glow */}
       <div className="absolute top-[40%] left-[45%] -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-[#a855f7]/12 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute top-[35%] left-[55%] -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[450px] h-[300px] md:h-[450px] bg-[#06b6d4]/12 rounded-full blur-[100px] pointer-events-none" />

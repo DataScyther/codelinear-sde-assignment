@@ -11,7 +11,7 @@ const stats = [
 
 export const Stats = () => {
   return (
-    <section className="py-14 md:py-16 border-y border-white/[0.04] bg-white/[0.01]">
+    <section className="py-14 md:py-16 border-y border-white/[0.04] bg-[#060318]">
       <Container>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4">
           {stats.map((stat, index) => (

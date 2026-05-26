@@ -11,20 +11,20 @@ const stats = [
 
 export const Stats = () => {
   return (
-    <section className="py-20 border-y border-white/[0.04] relative">
+    <section className="py-14 md:py-16 border-y border-white/[0.04] bg-white/[0.01]">
       <Container>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4">
           {stats.map((stat, index) => (
             <AnimateIn
               key={index}
               variant="fadeUp"
-              delay={0.08 * index}
+              delay={0.06 * index}
               className="text-center"
             >
-              <h4 className="text-3xl md:text-4xl font-heading font-bold text-white mb-1.5 tabular-nums">
+              <p className="text-2xl md:text-3xl font-heading font-bold text-white mb-1 tabular-nums tracking-tight">
                 {stat.value}
-              </h4>
-              <p className="text-xs font-medium text-slate-500 uppercase tracking-widest">
+              </p>
+              <p className="text-[11px] font-medium text-slate-500 uppercase tracking-wider">
                 {stat.label}
               </p>
             </AnimateIn>

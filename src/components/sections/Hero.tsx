@@ -6,32 +6,32 @@ import { AnimateIn } from "@/components/animations/AnimateIn";
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-[85vh] flex items-center pt-28 pb-20 overflow-hidden">
-      {/* Background glow — asymmetric positioning for natural feel */}
-      <div className="absolute top-[40%] left-[45%] -translate-x-1/2 -translate-y-1/2 w-[500px] md:w-[700px] h-[500px] md:h-[700px] bg-[#a855f7]/15 rounded-full blur-[120px] opacity-50 pointer-events-none" />
-      <div className="absolute top-[35%] left-[55%] -translate-x-1/2 -translate-y-1/2 w-[350px] md:w-[500px] h-[350px] md:h-[500px] bg-[#06b6d4]/15 rounded-full blur-[100px] opacity-50 pointer-events-none" />
+    <section className="relative min-h-[70vh] flex items-center pt-24 pb-16 overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute top-[40%] left-[45%] -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-[#a855f7]/12 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-[35%] left-[55%] -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[450px] h-[300px] md:h-[450px] bg-[#06b6d4]/12 rounded-full blur-[100px] pointer-events-none" />
 
       <Container className="relative z-10 flex flex-col items-center text-center">
         <AnimateIn variant="fadeUp" delay={0.1}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-sm">
-            <span className="flex h-2 w-2 rounded-full bg-[#06b6d4] animate-pulse" />
-            <span className="text-sm font-medium text-slate-300">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.07] mb-6 backdrop-blur-sm">
+            <span className="flex h-1.5 w-1.5 rounded-full bg-[#06b6d4] animate-pulse" />
+            <span className="text-xs font-medium text-slate-400">
               Now in Public Beta
             </span>
           </div>
         </AnimateIn>
 
         <AnimateIn variant="fadeUp" delay={0.2}>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-[1.08] mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-heading font-extrabold tracking-tight text-white max-w-3xl mx-auto leading-[1.1] mb-5">
             The Financial OS for the{" "}
             <span className="text-gradient-purple-cyan">Next Generation.</span>
           </h1>
         </AnimateIn>
 
         <AnimateIn variant="fadeUp" delay={0.3}>
-          <p className="text-base md:text-lg text-slate-400 max-w-xl mx-auto mb-10 leading-relaxed">
+          <p className="text-sm md:text-base text-slate-400 max-w-md mx-auto mb-8 leading-relaxed">
             Manage trades, monitor liquidity, and scale your fintech
-            infrastructure — all from one unified platform.
+            infrastructure — all from one platform.
           </p>
         </AnimateIn>
 
@@ -39,16 +39,16 @@ export const Hero = () => {
           <div className="flex flex-col sm:flex-row items-center gap-3 justify-center">
             <Link
               href="#features"
-              className="group flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-[#a855f7] to-[#06b6d4] text-white font-semibold transition-all hover:shadow-[0_0_20px_rgba(6,182,212,0.25)] hover:scale-[1.02] active:scale-[0.98]"
+              className="group flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#a855f7] to-[#06b6d4] text-white text-sm font-semibold transition-all hover:shadow-[0_0_20px_rgba(6,182,212,0.2)] hover:scale-[1.02] active:scale-[0.98]"
             >
               Get Started
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
             </Link>
             <Link
               href="#dashboard"
-              className="group flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white font-semibold transition-all hover:bg-white/10 hover:border-white/15"
+              className="group flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white text-sm font-semibold transition-all hover:bg-white/[0.07]"
             >
-              <Terminal className="w-4 h-4 text-slate-400 group-hover:text-white transition-colors" />
+              <Terminal className="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition-colors" />
               View Demo
             </Link>
           </div>

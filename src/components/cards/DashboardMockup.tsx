@@ -1,60 +1,76 @@
 import React from "react";
 import { Activity, ArrowUpRight, DollarSign, TrendingUp } from "lucide-react";
 
+// Intentionally irregular bar heights to mimic real trading volume data.
+// Pattern: gradual uptrend with natural dips — not mathematically smooth.
+const chartBars = [
+  28, 34, 22, 45, 38, 52, 41, 63, 55, 48,
+  70, 58, 75, 62, 80, 68, 85, 72, 90, 78,
+  88, 82, 95, 87,
+];
+
 export const DashboardMockup = () => {
   return (
     <div className="w-full rounded-2xl bg-[#030014]/90 border border-white/[0.08] shadow-[0_8px_32px_rgba(0,0,0,0.4)] overflow-hidden">
       {/* Window chrome */}
-      <div className="flex items-center justify-between px-5 py-3 border-b border-white/[0.06] bg-white/[0.03]">
+      <div className="flex items-center justify-between px-4 md:px-5 py-2.5 border-b border-white/[0.06] bg-white/[0.02]">
         <div className="flex items-center gap-3">
           <div className="flex gap-1.5">
-            <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
-            <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
-            <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
+            <div className="w-2.5 h-2.5 rounded-full bg-white/[0.08]" />
+            <div className="w-2.5 h-2.5 rounded-full bg-white/[0.08]" />
+            <div className="w-2.5 h-2.5 rounded-full bg-white/[0.08]" />
           </div>
-          <div className="h-3.5 w-28 bg-white/[0.06] rounded-full" />
+          <div className="h-3 w-24 bg-white/[0.04] rounded" />
         </div>
         <div className="flex items-center gap-2">
-          <div className="h-5 w-20 bg-white/[0.06] rounded-full" />
-          <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-[#a855f7] to-[#06b6d4]" />
+          <div className="hidden sm:block h-4 w-16 bg-white/[0.04] rounded" />
+          <div className="w-5 h-5 rounded-full bg-gradient-to-tr from-[#a855f7] to-[#06b6d4]" />
         </div>
       </div>
 
-      {/* Dashboard content */}
-      <div className="p-5 md:p-6 grid grid-cols-1 md:grid-cols-3 gap-5">
-        {/* Main chart */}
-        <div className="md:col-span-2 space-y-5">
+      {/* Dashboard body */}
+      <div className="p-4 md:p-5 grid grid-cols-1 md:grid-cols-3 gap-4">
+        {/* Chart area */}
+        <div className="md:col-span-2 space-y-4">
           <div className="flex items-end justify-between">
             <div>
-              <p className="text-xs text-slate-500 mb-1 uppercase tracking-wider">
+              <p className="text-[11px] text-slate-500 mb-0.5 uppercase tracking-wider">
                 Total Liquidity
               </p>
-              <h4 className="text-2xl md:text-3xl font-heading font-bold text-white tabular-nums">
+              <h4 className="text-xl md:text-2xl font-heading font-bold text-white tabular-nums">
                 $142,405.00
               </h4>
             </div>
-            <div className="flex items-center gap-1 text-[#06b6d4] bg-[#06b6d4]/10 px-2.5 py-1 rounded-full">
-              <ArrowUpRight className="w-3.5 h-3.5" />
-              <span className="text-xs font-medium">+14.5%</span>
+            <div className="flex items-center gap-1 text-[#06b6d4] bg-[#06b6d4]/[0.08] px-2 py-0.5 rounded-full">
+              <ArrowUpRight className="w-3 h-3" />
+              <span className="text-[11px] font-medium">+14.5%</span>
             </div>
           </div>
 
-          {/* Bar chart */}
-          <div className="h-40 md:h-44 w-full rounded-xl bg-gradient-to-t from-[#06b6d4]/[0.06] to-transparent border-b border-[#06b6d4]/20 relative flex items-end gap-[3%] px-3">
-            {[35, 55, 42, 78, 60, 72, 88, 50, 65, 82, 70, 95].map(
-              (h, i) => (
+          {/* Chart with subtle grid lines */}
+          <div className="h-36 md:h-40 w-full rounded-lg relative">
+            {/* Horizontal grid hints */}
+            <div className="absolute inset-0 flex flex-col justify-between py-1 pointer-events-none">
+              {[0, 1, 2, 3].map((i) => (
+                <div key={i} className="w-full h-px bg-white/[0.03]" />
+              ))}
+            </div>
+
+            {/* Bars */}
+            <div className="relative h-full flex items-end gap-px px-1">
+              {chartBars.map((h, i) => (
                 <div
                   key={i}
-                  className="flex-1 bg-[#06b6d4]/20 rounded-t-sm transition-all hover:bg-[#06b6d4]/35"
+                  className="flex-1 bg-[#06b6d4]/[0.18] hover:bg-[#06b6d4]/30 rounded-t-[1px] transition-colors"
                   style={{ height: `${h}%` }}
                 />
-              )
-            )}
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Side widgets */}
-        <div className="space-y-3">
+        <div className="space-y-2.5">
           {[
             {
               icon: Activity,
@@ -77,20 +93,24 @@ export const DashboardMockup = () => {
           ].map((widget) => (
             <div
               key={widget.label}
-              className="p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.06] flex items-center gap-3"
+              className="p-3 rounded-lg bg-white/[0.02] border border-white/[0.05] flex items-center gap-3"
             >
               <div
-                className="p-2 rounded-lg"
-                style={{ backgroundColor: `${widget.color}15` }}
+                className="p-1.5 rounded-md"
+                style={{ backgroundColor: `${widget.color}10` }}
               >
                 <widget.icon
-                  className="w-4 h-4"
+                  className="w-3.5 h-3.5"
                   style={{ color: widget.color }}
                 />
               </div>
-              <div>
-                <p className="text-[11px] text-slate-500">{widget.label}</p>
-                <p className="text-sm font-medium text-white">{widget.value}</p>
+              <div className="min-w-0">
+                <p className="text-[10px] text-slate-500 leading-none mb-0.5">
+                  {widget.label}
+                </p>
+                <p className="text-[13px] font-medium text-white leading-tight tabular-nums">
+                  {widget.value}
+                </p>
               </div>
             </div>
           ))}

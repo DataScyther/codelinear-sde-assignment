@@ -9,21 +9,12 @@ interface FeatureCardProps {
   className?: string;
 }
 
-/**
- * Memoized to prevent re-renders when parent Features section re-renders.
- *
- * Performance notes:
- * - No will-change or translateZ(0) — these permanently promote elements to
- *   GPU compositing layers, wasting VRAM for elements that only animate on hover.
- *   Modern browsers auto-promote on hover transitions already.
- * - Scoped transition to only the properties that actually change.
- */
-export const FeatureCard: React.FC<FeatureCardProps> = memo(({
+export const FeatureCard = memo(function FeatureCard({
   icon: Icon,
   title,
   description,
   className,
-}) => {
+}: FeatureCardProps) {
   return (
     <div
       className={cn(
@@ -47,5 +38,3 @@ export const FeatureCard: React.FC<FeatureCardProps> = memo(({
     </div>
   );
 });
-
-FeatureCard.displayName = "FeatureCard";

@@ -8,30 +8,11 @@ const chartBars = [
 ];
 
 const widgets = [
-  {
-    icon: Activity,
-    color: "#a855f7",
-    label: "Network Status",
-    value: "Operational",
-  },
-  {
-    icon: DollarSign,
-    color: "#06b6d4",
-    label: "24h Volume",
-    value: "$4.2B",
-  },
-  {
-    icon: TrendingUp,
-    color: "#3b82f6",
-    label: "Active Pools",
-    value: "1,247",
-  },
+  { icon: Activity, color: "#a855f7", label: "Network Status", value: "Operational" },
+  { icon: DollarSign, color: "#06b6d4", label: "24h Volume", value: "$4.2B" },
+  { icon: TrendingUp, color: "#3b82f6", label: "Active Pools", value: "1,247" },
 ];
 
-/**
- * Memoized dashboard mockup — this is a purely visual/static component.
- * No state, no side effects, no reason to ever re-render.
- */
 export const DashboardMockup = memo(function DashboardMockup() {
   return (
     <div className="w-full rounded-2xl bg-bg-card/90 border border-white/[0.05] shadow-[0_8px_32px_rgba(0,0,0,0.3)] overflow-hidden">
@@ -51,9 +32,8 @@ export const DashboardMockup = memo(function DashboardMockup() {
         </div>
       </div>
 
-      {/* Dashboard body */}
       <div className="p-4 md:p-5 grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
-        {/* Chart area */}
+        {/* Chart */}
         <div className="md:col-span-2 flex flex-col justify-between gap-4">
           <div className="flex items-end justify-between">
             <div>
@@ -70,9 +50,7 @@ export const DashboardMockup = memo(function DashboardMockup() {
             </div>
           </div>
 
-          {/* Chart with axes */}
           <div className="flex gap-2">
-            {/* Y-axis labels */}
             <div className="flex flex-col justify-between text-[9px] text-slate-500/80 font-mono h-32 md:h-36 pb-2.5 select-none text-right w-8">
               <span>$150k</span>
               <span>$100k</span>
@@ -81,16 +59,13 @@ export const DashboardMockup = memo(function DashboardMockup() {
             </div>
 
             <div className="flex-1 space-y-1.5">
-              {/* Chart container */}
               <div className="h-32 md:h-36 w-full rounded-lg relative">
-                {/* Horizontal grid hints */}
                 <div className="absolute inset-0 flex flex-col justify-between py-0.5 pointer-events-none">
                   {[0, 1, 2, 3].map((i) => (
                     <div key={i} className="w-full h-px bg-white/[0.02]" />
                   ))}
                 </div>
 
-                {/* Bars */}
                 <div className="relative h-full flex items-end gap-px px-0.5">
                   {chartBars.map((h, i) => (
                     <div
@@ -102,7 +77,6 @@ export const DashboardMockup = memo(function DashboardMockup() {
                 </div>
               </div>
 
-              {/* X-axis labels */}
               <div className="flex justify-between text-[9px] text-slate-500/80 font-mono select-none px-1">
                 <span>08:00 AM</span>
                 <span>12:00 PM</span>
@@ -113,7 +87,7 @@ export const DashboardMockup = memo(function DashboardMockup() {
           </div>
         </div>
 
-        {/* Side widgets */}
+        {/* Widgets */}
         <div className="flex flex-col justify-between gap-3 md:gap-0 md:h-full">
           {widgets.map((widget) => (
             <div

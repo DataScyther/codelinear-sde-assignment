@@ -16,18 +16,13 @@ export type AnimationVariant =
 interface AnimateInProps {
   children: React.ReactNode;
   variant?: AnimationVariant;
-  type?: AnimationVariant;
   duration?: number;
   delay?: number;
   threshold?: number;
   className?: string;
 }
 
-/*
- * Variant definitions use only transform + opacity.
- * These are compositor-friendly properties that the GPU handles
- * without triggering layout or paint on any frame.
- */
+/* Only transform + opacity — compositor-friendly, no layout/paint triggers */
 const variants: Record<
   AnimationVariant,
   {
@@ -69,34 +64,22 @@ const variants: Record<
   },
 };
 
-/**
- * Lightweight viewport-triggered entry animation.
- * Relies on the app-level <MotionProvider> for LazyMotion features.
- *
- * Performance notes:
- * - Reduced travel distance (30px → 24px) for subtler, faster reveals
- * - Shortened default duration (0.8s → 0.55s) to feel snappier
- * - Memoized to prevent re-renders from parent state changes
- * - No per-instance LazyMotion — uses shared provider
- */
+/** Viewport-triggered entry animation. Uses app-level LazyMotion provider. */
 export const AnimateIn = memo(function AnimateIn({
   children,
   variant = "fadeUp",
-  type,
   duration = 0.55,
   delay = 0,
   threshold = 0.15,
   className,
 }: AnimateInProps) {
   const shouldReduceMotion = useReducedMotion();
-
-  const activeVariant = type || variant;
-  const selectedVariant = shouldReduceMotion ? "fadeIn" : activeVariant;
+  const selected = shouldReduceMotion ? "fadeIn" : variant;
 
   const motionVariants = {
-    hidden: variants[selectedVariant].hidden,
+    hidden: variants[selected].hidden,
     visible: {
-      ...variants[selectedVariant].visible,
+      ...variants[selected].visible,
       transition: {
         duration: shouldReduceMotion ? 0.01 : duration,
         delay,

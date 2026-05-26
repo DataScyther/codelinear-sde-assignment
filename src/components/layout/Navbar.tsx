@@ -31,16 +31,6 @@ export const Navbar = () => {
   return (
     <header
       className={cn(
-        /*
-         * Performance-critical: this element is fixed and rendered on every scroll frame.
-         *
-         * Key decisions:
-         * - NO backdrop-blur — this is the single most expensive effect on a fixed element.
-         *   On every scroll frame the GPU must re-sample and blur the pixels behind the header.
-         *   Using a near-opaque solid background instead is visually identical on dark themes.
-         * - transition scoped to background-color, border-color, box-shadow only.
-         *   "transition-all" on a fixed element causes layout recalc per frame.
-         */
         "fixed top-0 left-0 right-0 z-50 py-3.5 border-b border-transparent",
         "transition-[background-color,border-color,box-shadow] duration-200 ease-out",
         isScrolled
@@ -49,7 +39,6 @@ export const Navbar = () => {
       )}
     >
       <Container className="flex items-center justify-between">
-        {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <div className="relative flex items-center justify-center w-7 h-7 rounded-lg bg-gradient-to-br from-[#a855f7] to-[#06b6d4] p-[1px]">
             <div className="flex items-center justify-center w-full h-full bg-[#07060f] rounded-[6px]">
@@ -61,7 +50,6 @@ export const Navbar = () => {
           </span>
         </Link>
 
-        {/* Desktop nav */}
         <nav aria-label="Main navigation" className="hidden md:flex items-center gap-8">
           {headerNavItems.map((item) => (
             <Link
@@ -74,7 +62,6 @@ export const Navbar = () => {
           ))}
         </nav>
 
-        {/* Desktop CTA */}
         <div className="hidden md:flex items-center">
           <Link
             href="#features"
@@ -84,7 +71,6 @@ export const Navbar = () => {
           </Link>
         </div>
 
-        {/* Mobile toggle */}
         <button
           className="md:hidden p-2 text-slate-300 hover:text-white transition-colors duration-150"
           onClick={toggleMobileMenu}
@@ -98,7 +84,6 @@ export const Navbar = () => {
         </button>
       </Container>
 
-      {/* Mobile menu — no backdrop-blur for perf */}
       {isMobileMenuOpen && (
         <nav aria-label="Mobile navigation" className="md:hidden absolute top-full left-0 right-0 bg-[#07060f]/98 border-b border-white/[0.02] py-3 px-4 flex flex-col gap-0.5">
           {headerNavItems.map((item) => (

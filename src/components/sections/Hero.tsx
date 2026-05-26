@@ -7,12 +7,6 @@ import { AnimateIn } from "@/components/animations/AnimateIn";
 export const Hero = () => {
   return (
     <section aria-label="Hero" className="relative min-h-[70vh] flex items-center pt-24 md:pt-28 pb-12 md:pb-16 overflow-hidden">
-      {/*
-       * Background glows — using fixed radial-gradient on a single div
-       * instead of two separate blur-[120px] elements.
-       * A CSS gradient is rasterized once and never recomposited,
-       * whereas blur() forces per-frame Gaussian blur computation.
-       */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{

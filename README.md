@@ -1,31 +1,25 @@
-## Live Demo
-[Vercel Deployment](https://codelinear-sde-assignment.vercel.app)
+# Codelinear — Frontend Assignment
 
-## Design Goals
-- Pixel-perfect implementation
-- Responsive across all breakpoints
-- Production-grade component architecture
-- Minimal and premium visual system
-- Optimized rendering and motion performance
+## Live Demo
+[codelinear-sde-assignment.vercel.app](https://codelinear-sde-assignment.vercel.app)
 
 ## Tech Stack
 - Next.js 16 (App Router)
+- React 19
 - TypeScript
 - Tailwind CSS v4
 - Framer Motion
-- React 19
 
 ## Features
-- Responsive dashboard UI
-- Smooth motion interactions
-- Reusable component architecture
-- Optimized typography system
-- Accessible semantic structure
+- Responsive across all breakpoints
 - Dark layered visual system
+- Smooth viewport-triggered animations
+- Accessible semantic markup
+- Reusable component architecture
 
-## Performance Considerations
-- Server Components
-- LazyMotion optimization
-- Minimal client-side JS
-- SVG-first icon system
-- Optimized rendering boundaries
+## Performance
+- Server Components for all non-interactive sections
+- Single shared LazyMotion provider
+- Scoped CSS transitions (no `transition-all`)
+- Radial-gradient backgrounds (no runtime blur)
+- Memoized static components

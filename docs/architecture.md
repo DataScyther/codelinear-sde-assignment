@@ -1,22 +1,25 @@
 # Architecture Overview
 
-This document outlines the technical decisions and constraints for the frontend application.
-
-## Core Stack
-- **Next.js 16 (App Router)**: Utilizing React Server Components by default for optimal performance.
-- **Tailwind CSS v4**: CSS-driven configuration via `src/styles/theme.css`.
-- **Framer Motion**: Handled securely with `<LazyMotion>` to minimize bundle footprint.
-- **Lucide React**: Lightweight vector icon imports.
+## Stack
+- **Next.js 16 (App Router)** — React Server Components by default.
+- **Tailwind CSS v4** — CSS-driven config via `src/styles/theme.css`.
+- **Framer Motion** — Shared `<LazyMotion>` provider at the layout level.
+- **Lucide React** — Tree-shakeable vector icons.
 
 ## Structure
-- `src/app`: Routes, global layout, and styles.
-- `src/components`: 
-  - `ui`: Reusable primitive components (buttons, badges).
-  - `layout`: Structural page wrappers (navbar, grid containers).
-  - `sections`: Large page sections (hero, features).
-  - `animations`: Lazy motion wrapper components.
+- `src/app` — Routes, global layout, and styles.
+- `src/components/`
+  - `layout/` — Structural wrappers (navbar, footer, container).
+  - `sections/` — Full page sections (hero, features, CTA).
+  - `cards/` — Reusable card components (feature card, dashboard mockup).
+  - `animations/` — Motion provider and viewport-triggered animation wrapper.
+- `src/config/` — Site metadata and SEO configuration.
+- `src/constants/` — Navigation items and static data.
+- `src/types/` — Shared TypeScript interfaces.
+- `src/lib/` — Utility functions.
+- `src/styles/` — Design tokens and theme variables.
 
-## Guidelines
-- Components exceeding ~150 lines should be broken down into sub-components.
-- Use `"use client"` exclusively for interactive leaf nodes and animation wrappers to maximize Server Component usage.
-- All styles rely on CSS variables defined in `src/styles/theme.css` to prevent arbitrary numbers in Tailwind class lists.
+## Conventions
+- Components over ~150 lines should be split.
+- Use `"use client"` only for interactive leaf nodes and animation wrappers.
+- All colors and spacing use CSS variables from `theme.css`.

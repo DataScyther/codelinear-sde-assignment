@@ -9,13 +9,7 @@ export const CTA = () => {
     <section aria-label="Call to action" className="py-16 md:py-20 bg-[#07060f] border-t border-white/[0.02]">
       <Container>
         <AnimateIn variant="scaleIn" className="max-w-3xl mx-auto">
-          {/*
-           * Removed backdrop-blur-xl — this card is over a solid bg-[#07060f] section,
-           * so blur has no visual effect but still costs GPU cycles.
-           * Using a slightly more opaque background instead.
-           */}
           <div className="p-6 sm:p-10 md:p-14 text-center relative overflow-hidden rounded-2xl bg-[#0c0620] border border-white/[0.08]">
-            {/* Glow — radial-gradient instead of blur-2xl div */}
             <div
               className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[60%] pointer-events-none"
               style={{

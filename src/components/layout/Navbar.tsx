@@ -55,7 +55,7 @@ export const Navbar = () => {
             <Link
               key={item.title}
               href={item.href}
-              className="text-[13px] text-slate-400 hover:text-slate-200 transition-colors duration-150"
+              className="text-[13px] text-slate-400 hover:text-slate-100 transition-[color,transform] duration-200 ease-premium hover:scale-[1.05] active:scale-[0.95]"
             >
               {item.title}
             </Link>
@@ -65,7 +65,7 @@ export const Navbar = () => {
         <div className="hidden md:flex items-center">
           <Link
             href="#features"
-            className="px-4 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.08] border border-white/[0.08] text-[13px] font-medium text-slate-50 transition-[background-color,border-color] duration-150"
+            className="px-4 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.08] border border-white/[0.08] text-[13px] font-medium text-slate-50 transition-[background-color,border-color,transform] duration-200 ease-premium hover:scale-[1.03] active:scale-[0.96]"
           >
             Get Started
           </Link>
@@ -90,7 +90,7 @@ export const Navbar = () => {
             <Link
               key={item.title}
               href={item.href}
-              className="text-sm text-slate-300 hover:text-slate-50 p-3 rounded-lg hover:bg-white/[0.04] transition-colors duration-150"
+              className="text-sm text-slate-300 hover:text-slate-50 p-3 rounded-lg hover:bg-white/[0.04] transition-[background-color,color,transform] duration-200 ease-premium active:scale-[0.97]"
               onClick={closeMobileMenu}
             >
               {item.title}
@@ -99,7 +99,7 @@ export const Navbar = () => {
           <div className="pt-2 mt-1 border-t border-white/[0.02]">
             <Link
               href="#features"
-              className="flex items-center justify-center w-full px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#a855f7] to-[#06b6d4] text-slate-50 text-sm font-medium"
+              className="flex items-center justify-center w-full px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#a855f7] to-[#06b6d4] text-slate-50 text-sm font-medium transition-transform duration-200 ease-premium active:scale-[0.96]"
               onClick={closeMobileMenu}
             >
               Get Started

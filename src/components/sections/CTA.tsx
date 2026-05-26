@@ -28,14 +28,14 @@ export const CTA = () => {
               <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto justify-center">
                 <Link
                   href="#features"
-                  className="flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-[#a855f7] to-[#06b6d4] text-slate-50 font-semibold transition-[box-shadow,transform] duration-150 hover:shadow-[0_0_20px_rgba(6,182,212,0.25)] hover:scale-[1.02] active:scale-[0.98]"
+                  className="flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-[#a855f7] to-[#06b6d4] text-slate-50 font-semibold transition-[box-shadow,transform] duration-200 ease-premium hover:shadow-[0_0_20px_rgba(6,182,212,0.25)] hover:scale-[1.02] active:scale-[0.96]"
                 >
                   Create Account
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="/contact"
-                  className="flex items-center justify-center px-7 py-3.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-slate-50 font-semibold transition-[background-color] duration-150 hover:bg-white/[0.08]"
+                  className="flex items-center justify-center px-7 py-3.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-slate-50 font-semibold transition-[background-color,transform] duration-200 ease-premium hover:bg-white/[0.08] hover:scale-[1.02] active:scale-[0.96]"
                 >
                   Contact Sales
                 </Link>

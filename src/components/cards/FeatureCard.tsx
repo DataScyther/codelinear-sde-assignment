@@ -18,9 +18,9 @@ export const FeatureCard = memo(function FeatureCard({
   return (
     <div
       className={cn(
-        "group relative p-6 md:p-7 rounded-2xl bg-bg-card border border-white/[0.05] overflow-hidden",
-        "transition-[background-color,border-color,transform] duration-200 ease-[var(--ease-premium)]",
-        "hover:bg-bg-card-hover hover:border-white/[0.10] hover:-translate-y-0.5",
+        "group relative p-6 md:p-7 rounded-2xl bg-bg-card border border-white/[0.05] overflow-hidden cursor-pointer",
+        "transition-[background-color,border-color,transform,box-shadow] duration-250 ease-premium",
+        "hover:bg-bg-card-hover hover:border-white/[0.10] hover:-translate-y-1 hover:shadow-lg active:scale-[0.98]",
         className
       )}
     >

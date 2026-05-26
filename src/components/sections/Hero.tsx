@@ -45,16 +45,16 @@ export const Hero = () => {
           <div className="flex flex-col sm:flex-row items-center gap-3 justify-center">
             <Link
               href="#features"
-              className="group flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#a855f7] to-[#06b6d4] text-slate-50 text-sm font-semibold transition-[box-shadow,transform] duration-150 hover:shadow-[0_0_20px_rgba(6,182,212,0.2)] hover:scale-[1.02] active:scale-[0.98]"
+              className="group flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#a855f7] to-[#06b6d4] text-slate-50 text-sm font-semibold transition-[box-shadow,transform] duration-200 ease-premium hover:shadow-[0_0_20px_rgba(6,182,212,0.25)] hover:scale-[1.02] active:scale-[0.96]"
             >
               Get Started
-              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-150" />
+              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-200 ease-premium" />
             </Link>
             <Link
               href="#dashboard"
-              className="group flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/[0.04] border border-white/[0.08] text-slate-50 text-sm font-semibold transition-[background-color] duration-150 hover:bg-white/[0.07]"
+              className="group flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/[0.04] border border-white/[0.08] text-slate-50 text-sm font-semibold transition-[background-color,transform] duration-200 ease-premium hover:bg-white/[0.07] hover:scale-[1.02] active:scale-[0.96]"
             >
-              <Terminal className="w-3.5 h-3.5 text-slate-500 group-hover:text-slate-50 transition-colors duration-150" />
+              <Terminal className="w-3.5 h-3.5 text-slate-500 group-hover:text-slate-50 transition-colors duration-200 ease-premium" />
               View Demo
             </Link>
           </div>

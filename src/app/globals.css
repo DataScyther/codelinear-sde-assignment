@@ -25,11 +25,20 @@ body {
   background-clip: text;
 }
 
-/* Scope transitions to only the properties that change on interaction */
-a, button {
-  transition-property: color, background-color, border-color, opacity, transform, box-shadow;
-  transition-duration: 0.15s;
-  transition-timing-function: ease-out;
+/* Scope transitions to only the properties that change on interaction with premium timing */
+a, button, [role="button"], input[type="submit"], input[type="button"] {
+  transition-property: color, background-color, border-color, opacity, transform, box-shadow, filter;
+  transition-duration: 200ms;
+  transition-timing-function: var(--ease-premium, cubic-bezier(0.16, 1, 0.3, 1));
+  will-change: transform, opacity;
+}
+
+/* Tactile active scaling for elements with backgrounds or borders (buttons, cards, badges) */
+a[class*="bg-"]:active,
+a[class*="border-"]:active,
+button:active,
+[role="button"]:active {
+  transform: scale(0.96) !important;
 }
 
 html {

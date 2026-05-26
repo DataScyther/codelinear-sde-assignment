@@ -1,0 +1,55 @@
+export const designSystem = {
+  colors: {
+    bgSpace: "#030014",
+    bgCard: "#0b0720",
+    bgCardHover: "#120c30",
+    cyberCyan: "#06b6d4",
+    cyberCyanHover: "#0891b2",
+    cyberPurple: "#a855f7",
+    cyberPurpleHover: "#9333ea",
+    cyberBlue: "#3b82f6",
+    cyberPink: "#ec4899",
+    borderSubtle: "#1f1a3a",
+    borderGlow: "#3c2a74",
+    borderGlass: "rgba(255, 255, 255, 0.08)",
+    textMuted: "#94a3b8",
+    textDim: "#64748b",
+    textGlow: "#e2e8f0",
+  },
+  typography: {
+    fonts: {
+      sans: "var(--font-plus-jakarta), system-ui, sans-serif",
+      body: "var(--font-inter), system-ui, sans-serif",
+      mono: "var(--font-geist-mono), monospace",
+    },
+  },
+  spacing: {
+    contentMaxWidth: "1280px",
+    headerHeight: "80px",
+  },
+  radius: {
+    xs: "4px",
+    sm: "8px",
+    md: "12px",
+    lg: "16px",
+    xl: "24px",
+    "2xl": "32px",
+    "3xl": "40px",
+    full: "9999px",
+  },
+  shadows: {
+    glowCyan: "0 0 25px rgba(6, 182, 212, 0.15)",
+    glowPurple: "0 0 25px rgba(168, 85, 247, 0.15)",
+    glowCard: "0 10px 30px -10px rgba(0, 0, 0, 0.7)",
+    glass: "0 8px 32px 0 rgba(0, 0, 0, 0.5)",
+  },
+  gradients: {
+    purpleCyan: "linear-gradient(135deg, #a855f7 0%, #06b6d4 100%)",
+    bluePink: "linear-gradient(135deg, #3b82f6 0%, #ec4899 100%)",
+    silver: "linear-gradient(135deg, #ffffff 0%, #94a3b8 100%)",
+  },
+  motion: {
+    easePremium: "cubic-bezier(0.16, 1, 0.3, 1)",
+    easeBouncePremium: "cubic-bezier(0.34, 1.56, 0.64, 1)",
+  },
+};

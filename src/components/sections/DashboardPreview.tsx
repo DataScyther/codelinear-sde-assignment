@@ -17,7 +17,7 @@ export const DashboardPreview = () => {
       <Container className="relative z-10 flex flex-col items-center">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <AnimateIn variant="fadeUp">
-            <h2 className="text-2xl md:text-4xl font-heading font-bold text-white mb-4 tracking-tight">
+            <h2 className="text-2xl md:text-4xl font-heading font-bold text-slate-50 mb-4 tracking-tight">
               Your Command Center
             </h2>
           </AnimateIn>

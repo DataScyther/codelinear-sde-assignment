@@ -28,7 +28,7 @@ export const FeatureCard = memo(function FeatureCard({
         <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.06] mb-5 text-cyber-cyan group-hover:text-cyber-purple transition-colors duration-200">
           <Icon className="w-5 h-5" />
         </div>
-        <h3 className="text-lg font-heading font-semibold text-white mb-2">
+        <h3 className="text-lg font-heading font-semibold text-slate-50 mb-2">
           {title}
         </h3>
         <p className="text-slate-400 leading-relaxed text-sm">

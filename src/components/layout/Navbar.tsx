@@ -65,14 +65,14 @@ export const Navbar = () => {
         <div className="hidden md:flex items-center">
           <Link
             href="#features"
-            className="px-4 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.08] border border-white/[0.08] text-[13px] font-medium text-white transition-[background-color,border-color] duration-150"
+            className="px-4 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.08] border border-white/[0.08] text-[13px] font-medium text-slate-50 transition-[background-color,border-color] duration-150"
           >
             Get Started
           </Link>
         </div>
 
         <button
-          className="md:hidden p-2 text-slate-300 hover:text-white transition-colors duration-150"
+          className="md:hidden p-2 text-slate-300 hover:text-slate-50 transition-colors duration-150"
           onClick={toggleMobileMenu}
           aria-label="Toggle menu"
         >
@@ -90,7 +90,7 @@ export const Navbar = () => {
             <Link
               key={item.title}
               href={item.href}
-              className="text-sm text-slate-300 hover:text-white p-3 rounded-lg hover:bg-white/[0.04] transition-colors duration-150"
+              className="text-sm text-slate-300 hover:text-slate-50 p-3 rounded-lg hover:bg-white/[0.04] transition-colors duration-150"
               onClick={closeMobileMenu}
             >
               {item.title}
@@ -99,7 +99,7 @@ export const Navbar = () => {
           <div className="pt-2 mt-1 border-t border-white/[0.02]">
             <Link
               href="#features"
-              className="flex items-center justify-center w-full px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#a855f7] to-[#06b6d4] text-white text-sm font-medium"
+              className="flex items-center justify-center w-full px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#a855f7] to-[#06b6d4] text-slate-50 text-sm font-medium"
               onClick={closeMobileMenu}
             >
               Get Started

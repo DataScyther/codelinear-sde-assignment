@@ -49,7 +49,7 @@ export const Features = () => {
       <Container>
         <div className="text-center max-w-2xl mx-auto mb-16">
           <AnimateIn variant="fadeUp">
-            <h2 className="text-2xl md:text-4xl font-heading font-bold text-white mb-4 tracking-tight">
+            <h2 className="text-2xl md:text-4xl font-heading font-bold text-slate-50 mb-4 tracking-tight">
               Built for{" "}
               <span className="text-gradient-purple-cyan">
                 Modern Finance

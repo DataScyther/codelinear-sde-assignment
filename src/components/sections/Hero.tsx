@@ -28,7 +28,7 @@ export const Hero = () => {
         </AnimateIn>
 
         <AnimateIn variant="fadeUp" delay={0.1}>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-heading font-extrabold tracking-tight text-white max-w-3xl mx-auto leading-[1.15] mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-heading font-extrabold tracking-tight text-slate-50 max-w-3xl mx-auto leading-[1.15] mb-4">
             The Financial OS for the{" "}
             <span className="text-gradient-purple-cyan">Next Generation.</span>
           </h1>
@@ -45,16 +45,16 @@ export const Hero = () => {
           <div className="flex flex-col sm:flex-row items-center gap-3 justify-center">
             <Link
               href="#features"
-              className="group flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#a855f7] to-[#06b6d4] text-white text-sm font-semibold transition-[box-shadow,transform] duration-150 hover:shadow-[0_0_20px_rgba(6,182,212,0.2)] hover:scale-[1.02] active:scale-[0.98]"
+              className="group flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#a855f7] to-[#06b6d4] text-slate-50 text-sm font-semibold transition-[box-shadow,transform] duration-150 hover:shadow-[0_0_20px_rgba(6,182,212,0.2)] hover:scale-[1.02] active:scale-[0.98]"
             >
               Get Started
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-150" />
             </Link>
             <Link
               href="#dashboard"
-              className="group flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white text-sm font-semibold transition-[background-color] duration-150 hover:bg-white/[0.07]"
+              className="group flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/[0.04] border border-white/[0.08] text-slate-50 text-sm font-semibold transition-[background-color] duration-150 hover:bg-white/[0.07]"
             >
-              <Terminal className="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition-colors duration-150" />
+              <Terminal className="w-3.5 h-3.5 text-slate-500 group-hover:text-slate-50 transition-colors duration-150" />
               View Demo
             </Link>
           </div>

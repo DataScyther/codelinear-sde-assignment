@@ -40,7 +40,7 @@ export const DashboardMockup = memo(function DashboardMockup() {
               <p className="text-[10px] text-slate-500 mb-0.5 uppercase tracking-wider font-medium">
                 Total Liquidity
               </p>
-              <h4 className="text-xl md:text-2xl font-heading font-bold text-white tabular-nums">
+              <h4 className="text-xl md:text-2xl font-heading font-bold text-slate-50 tabular-nums">
                 $142,405.00
               </h4>
             </div>
@@ -107,7 +107,7 @@ export const DashboardMockup = memo(function DashboardMockup() {
                 <p className="text-[10px] text-slate-500 leading-none mb-1.5">
                   {widget.label}
                 </p>
-                <p className="text-[13px] font-medium text-white leading-none tabular-nums">
+                <p className="text-[13px] font-medium text-slate-50 leading-none tabular-nums">
                   {widget.value}
                 </p>
               </div>

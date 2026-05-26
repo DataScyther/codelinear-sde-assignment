@@ -18,7 +18,7 @@ export const CTA = () => {
             />
 
             <div className="relative z-10 flex flex-col items-center">
-              <h2 className="text-2xl md:text-4xl font-heading font-bold text-white mb-4 tracking-tight">
+              <h2 className="text-2xl md:text-4xl font-heading font-bold text-slate-50 mb-4 tracking-tight">
                 Ready to Get Started?
               </h2>
               <p className="text-slate-500 text-base mb-8 max-w-lg">
@@ -28,14 +28,14 @@ export const CTA = () => {
               <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto justify-center">
                 <Link
                   href="#features"
-                  className="flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-[#a855f7] to-[#06b6d4] text-white font-semibold transition-[box-shadow,transform] duration-150 hover:shadow-[0_0_20px_rgba(6,182,212,0.25)] hover:scale-[1.02] active:scale-[0.98]"
+                  className="flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-[#a855f7] to-[#06b6d4] text-slate-50 font-semibold transition-[box-shadow,transform] duration-150 hover:shadow-[0_0_20px_rgba(6,182,212,0.25)] hover:scale-[1.02] active:scale-[0.98]"
                 >
                   Create Account
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="/contact"
-                  className="flex items-center justify-center px-7 py-3.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white font-semibold transition-[background-color] duration-150 hover:bg-white/[0.08]"
+                  className="flex items-center justify-center px-7 py-3.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-slate-50 font-semibold transition-[background-color] duration-150 hover:bg-white/[0.08]"
                 >
                   Contact Sales
                 </Link>

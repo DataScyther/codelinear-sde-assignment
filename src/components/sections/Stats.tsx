@@ -21,7 +21,7 @@ export const Stats = () => {
               delay={0.06 * index}
               className="text-center"
             >
-              <p className="text-2xl md:text-3xl font-heading font-bold text-white mb-1 tabular-nums tracking-tight">
+              <p className="text-2xl md:text-3xl font-heading font-bold text-slate-50 mb-1 tabular-nums tracking-tight">
                 {stat.value}
               </p>
               <p className="text-[11px] font-medium text-slate-500 uppercase tracking-wider">

@@ -18,7 +18,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
   return (
     <div
       className={cn(
-        "group relative p-6 md:p-7 rounded-2xl bg-bg-card border border-white/[0.05] transition-all duration-350 ease-[var(--ease-premium)] hover:bg-bg-card-hover hover:border-white/[0.10] hover:-translate-y-0.5 overflow-hidden",
+        "group relative p-6 md:p-7 rounded-2xl bg-bg-card border border-white/[0.05] transition-all duration-350 ease-[var(--ease-premium)] hover:bg-bg-card-hover hover:border-white/[0.10] hover:-translate-y-0.5 overflow-hidden will-change-transform gpu-layer",
         className
       )}
     >

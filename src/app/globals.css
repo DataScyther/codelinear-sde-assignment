@@ -59,3 +59,16 @@ body {
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 
+/* GPU layer promotion for 144Hz buttery transitions */
+.gpu-layer {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Off-screen rendering containment to save CPU paint budget on scroll */
+.section-contain {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 500px;
+}
+

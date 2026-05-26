@@ -5,7 +5,7 @@ import { DashboardMockup } from "@/components/cards/DashboardMockup";
 
 export const DashboardPreview = () => {
   return (
-    <section id="dashboard" className="py-16 md:py-20 relative overflow-hidden bg-[#07060f] border-t border-white/[0.02]">
+    <section id="dashboard" className="py-16 md:py-20 relative overflow-hidden bg-[#07060f] border-t border-white/[0.02] section-contain">
       {/* Subtle background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-r from-[#a855f7]/10 to-[#06b6d4]/10 blur-[120px] rounded-full pointer-events-none" />
 

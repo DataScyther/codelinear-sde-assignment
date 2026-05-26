@@ -114,7 +114,7 @@ export const DashboardMockup = () => {
           ].map((widget) => (
             <div
               key={widget.label}
-              className="p-3.5 rounded-xl bg-white/[0.01] border border-white/[0.04] hover:bg-white/[0.02] hover:border-white/[0.08] transition-all duration-350 ease-[var(--ease-premium)] flex items-center gap-3"
+              className="p-3.5 rounded-xl bg-white/[0.01] border border-white/[0.04] hover:bg-white/[0.02] hover:border-white/[0.08] transition-all duration-350 ease-[var(--ease-premium)] flex items-center gap-3 will-change-transform gpu-layer"
             >
               <div
                 className="p-1.5 rounded-md"

@@ -8,6 +8,13 @@
 - Minimal and premium visual system
 - Optimized rendering and motion performance
 
+## Tech Stack
+- Next.js 16 (App Router)
+- TypeScript
+- Tailwind CSS v4
+- Framer Motion
+- React 19
+
 ## Features
 - Responsive dashboard UI
 - Smooth motion interactions

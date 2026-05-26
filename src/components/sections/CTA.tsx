@@ -6,7 +6,7 @@ import { AnimateIn } from "@/components/animations/AnimateIn";
 
 export const CTA = () => {
   return (
-    <section className="py-16 md:py-20 bg-[#07060f] border-t border-white/[0.02] section-contain">
+    <section aria-label="Call to action" className="py-16 md:py-20 bg-[#07060f] border-t border-white/[0.02] section-contain">
       <Container>
         <AnimateIn variant="scaleIn" className="max-w-3xl mx-auto">
           <div className="p-6 sm:p-10 md:p-14 text-center relative overflow-hidden rounded-2xl bg-[#0a0520]/70 backdrop-blur-xl border border-white/[0.08]">
@@ -30,7 +30,7 @@ export const CTA = () => {
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
-                  href="#"
+                  href="/contact"
                   className="flex items-center justify-center px-7 py-3.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white font-semibold transition-all hover:bg-white/[0.08]"
                 >
                   Contact Sales

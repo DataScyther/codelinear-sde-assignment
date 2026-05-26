@@ -40,7 +40,7 @@ export const Navbar = () => {
         </Link>
 
         {/* Desktop nav — centered */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav aria-label="Main navigation" className="hidden md:flex items-center gap-8">
           {headerNavItems.map((item) => (
             <Link
               key={item.title}
@@ -78,7 +78,7 @@ export const Navbar = () => {
 
       {/* Mobile menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-[#07060f]/95 backdrop-blur-xl border-b border-white/[0.02] py-3 px-4 flex flex-col gap-0.5">
+        <nav aria-label="Mobile navigation" className="md:hidden absolute top-full left-0 right-0 bg-[#07060f]/95 backdrop-blur-xl border-b border-white/[0.02] py-3 px-4 flex flex-col gap-0.5">
           {headerNavItems.map((item) => (
             <Link
               key={item.title}
@@ -98,7 +98,7 @@ export const Navbar = () => {
               Get Started
             </Link>
           </div>
-        </div>
+        </nav>
       )}
     </header>
   );

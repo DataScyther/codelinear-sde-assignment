@@ -11,12 +11,12 @@ const stats = [
 
 export const Stats = () => {
   return (
-    <section className="py-10 md:py-12 border-y border-white/[0.02] bg-[#0b0a15]">
+    <section aria-label="Key metrics" className="py-10 md:py-12 border-y border-white/[0.02] bg-[#0b0a15]">
       <Container>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4">
           {stats.map((stat, index) => (
             <AnimateIn
-              key={index}
+              key={stat.label}
               variant="fadeUp"
               delay={0.06 * index}
               className="text-center"

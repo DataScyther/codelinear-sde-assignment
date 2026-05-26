@@ -25,5 +25,3 @@ export const siteConfig = {
     themeColor: "#030014",
   },
 };
-
-export type SiteConfig = typeof siteConfig;

@@ -3,28 +3,26 @@ import type { NavItem } from "@/types";
 export const headerNavItems: NavItem[] = [
   { title: "Features", href: "#features" },
   { title: "Dashboard", href: "#dashboard" },
-  { title: "Pricing", href: "#pricing" },
 ];
 
 export const footerNavItems = {
   product: [
     { title: "Features", href: "#features" },
-    { title: "Integrations", href: "#" },
-    { title: "Pricing", href: "#pricing" },
-    { title: "Security", href: "#" },
+    { title: "Integrations", href: "/integrations" },
+    { title: "Security", href: "/security" },
   ] as NavItem[],
   resources: [
-    { title: "Documentation", href: "#" },
-    { title: "API Reference", href: "#" },
-    { title: "Status", href: "#" },
+    { title: "Documentation", href: "/docs" },
+    { title: "API Reference", href: "/api" },
+    { title: "Status", href: "/status" },
   ] as NavItem[],
   company: [
-    { title: "About", href: "#" },
-    { title: "Careers", href: "#" },
-    { title: "Contact", href: "#" },
+    { title: "About", href: "/about" },
+    { title: "Careers", href: "/careers" },
+    { title: "Contact", href: "/contact" },
   ] as NavItem[],
   legal: [
-    { title: "Privacy", href: "#" },
-    { title: "Terms", href: "#" },
+    { title: "Privacy", href: "/privacy" },
+    { title: "Terms", href: "/terms" },
   ] as NavItem[],
 };

@@ -12,11 +12,6 @@ export default function Home() {
       <DashboardPreview />
       <Stats />
       <CTA />
-      {/* 
-        Remaining UI Sections will be injected here:
-        - CTA
-        - Footer
-      */}
     </>
   );
 }

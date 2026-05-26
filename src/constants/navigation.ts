@@ -1,55 +1,30 @@
-export interface NavItem {
-  title: string;
-  href: string;
-  disabled?: boolean;
-  external?: boolean;
-}
+import type { NavItem } from "@/types";
 
 export const headerNavItems: NavItem[] = [
-  {
-    title: "Solutions",
-    href: "#solutions",
-  },
-  {
-    title: "Liquidity",
-    href: "#liquidity",
-  },
-  {
-    title: "Dashboard",
-    href: "#dashboard",
-  },
-  {
-    title: "Analytics",
-    href: "#analytics",
-  },
-  {
-    title: "Pricing",
-    href: "#pricing",
-  },
+  { title: "Features", href: "#features" },
+  { title: "Dashboard", href: "#dashboard" },
+  { title: "Pricing", href: "#pricing" },
 ];
 
 export const footerNavItems = {
   product: [
     { title: "Features", href: "#features" },
-    { title: "Integrations", href: "#integrations" },
-    { title: "Enterprise Pricing", href: "#pricing" },
-    { title: "Security Protocols", href: "/security" },
+    { title: "Integrations", href: "#" },
+    { title: "Pricing", href: "#pricing" },
+    { title: "Security", href: "#" },
   ] as NavItem[],
   resources: [
-    { title: "System Documentation", href: "https://docs.antigravity.finance", external: true },
-    { title: "API Reference", href: "/docs/api" },
-    { title: "Developer Sandbox", href: "/sandbox" },
-    { title: "Status Dashboard", href: "/status" },
+    { title: "Documentation", href: "#" },
+    { title: "API Reference", href: "#" },
+    { title: "Status", href: "#" },
   ] as NavItem[],
   company: [
-    { title: "About Systems", href: "/about" },
-    { title: "Careers", href: "/careers" },
-    { title: "Press Kit", href: "/press" },
-    { title: "Contact Sales", href: "/contact" },
+    { title: "About", href: "#" },
+    { title: "Careers", href: "#" },
+    { title: "Contact", href: "#" },
   ] as NavItem[],
   legal: [
-    { title: "Privacy Policy", href: "/privacy" },
-    { title: "Terms of Service", href: "/terms" },
-    { title: "SLA Commitments", href: "/sla" },
+    { title: "Privacy", href: "#" },
+    { title: "Terms", href: "#" },
   ] as NavItem[],
 };

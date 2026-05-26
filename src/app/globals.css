@@ -31,6 +31,7 @@ a, button, [role="button"], input[type="submit"], input[type="button"] {
   transition-duration: 200ms;
   transition-timing-function: var(--ease-premium, cubic-bezier(0.16, 1, 0.3, 1));
   will-change: transform, opacity;
+  touch-action: manipulation; /* Disable double-tap zoom delay on mobile touch devices */
 }
 
 /* Tactile active scaling for elements with backgrounds or borders (buttons, cards, badges) */
